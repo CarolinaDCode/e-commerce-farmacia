@@ -1,24 +1,16 @@
-export const Search = ({ onSearch }) => {
-    const [searchTerm, setSearchTerm] = useState("");
-  
-    const handleChange = (e) => {
-      setSearchTerm(e.target.value);
-    };
-  
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      onSearch(searchTerm);
-    };
+import { IoSearchOutline } from 'react-icons/io5';
+export const Search = () => {
   
     return (
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={searchTerm}
-          onChange={handleChange}
-          placeholder="Buscar..."
-        />
-        <button type="submit">Buscar</button>
+      <form className="flex justify-center mb-20">
+        <div className="flex relative p-l bg-gradiente-to-tr from-purple-600 to-blue-100">
+          <input
+            className='flex-1 p-2 pl-4 rounded-full'
+            type="text"
+            placeholder="Buscar..."
+          />
+        </div>
+        <IoSearchOutline className="w-5 h-5 mx-2"/>
       </form>
     );
   };
