@@ -1,7 +1,7 @@
 'use client';
 import { titleFont } from '@/config/font';
 import { IoCartOutline } from 'react-icons/io5';
-import { Search } from '../search/Search';
+import { Search } from './search/Search';
 import Link from 'next/link';
 
 export const TopMenu = () => {
@@ -20,8 +20,6 @@ export const TopMenu = () => {
                 <Link className="m-2 p-2 rounded-md transition-all hover:bg-gray-100" href="/category/cuidadopersonal">Cuidado Personal</Link>
             </div>
             <div className="flex items-center">
-                {/* <Link href="/search" className="mx-2"> */}
-                {/* </Link> */}
                 <Search />
                 <Link href="/cart" className="mx-2">
                     <div className="relative">

@@ -1,15 +1,12 @@
 import { ProductGrid, Title } from '@/components';
-// import { initialData } from '@/utils/service';
 import axios from 'axios';
-
+// import { initialData } from '@/utils/service';
 
 const response = await axios.get('https://67a681cf510789ef0dfb946c.mockapi.io/api/v1/productos');
 const initialData = response.data;
 const products = initialData;
 
-
 export default async function Home() {
-
     return (
       <>
         <Title title="Tienda" subtitle="Todos los productos" />
@@ -17,6 +14,10 @@ export default async function Home() {
       </>
     );
 }
+
+
+
+
 
 // export default function Home({}) {
 
