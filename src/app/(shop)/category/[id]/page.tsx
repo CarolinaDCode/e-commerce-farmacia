@@ -23,6 +23,7 @@ export default function Page() {
     // }
 
     const [products, setProducts] = useState([]);
+    const [categoryProduct, setCategoryProduct] = useState([]);
 
     useEffect(() => {
       const fetchProducts = async () => {
@@ -36,25 +37,34 @@ export default function Page() {
       fetchProducts();
     }, []);
 
-    const categoryProduct = products.filter(producto => {
-        if(id === "farmacia"){
-            return producto.category === "Farmacia";
-        }else if(id === "cuidadopersonal"){
-            return producto.category === "cuidado personal";
-        }else if(id === "dermatologiacosmetica"){
-            return producto.category === "Dermatología Cosmética";
-        }else if(id === "belleza"){
-            return producto.category === "Belleza";
-        }else if(id === "dispositivosmedicos"){
-            return producto.category === "Dispositivos Médicos";
-        }else if(id === "salud"){
-            return producto.category === "Salud";
-        }
-    });
+
+    useEffect(() => {
+        const filteredProducts = products.filter((producto) => {
+          if (id === 'farmacia') {
+            return producto.category === 'Farmacia';
+          } else if (id === 'cuidadopersonal') {
+            return producto.category === 'cuidado personal';
+          } else if (id === 'dermatologiacosmetica') {
+            return producto.category === 'Dermatología Cosmética';
+          } else if (id === 'belleza') {
+            return producto.category === 'Belleza';
+          } else if (id === 'dispositivosmedicos') {
+            return producto.category === 'Dispositivos Médicos';
+          } else if (id === 'salud') {
+            return producto.category === 'Salud';
+          }
+          return false;
+        });
+        setCategoryProduct(filteredProducts);
+      }, [id, products]);  // Agrega `id` y `products` como dependencias para recalcular
+    
+      if (!categoryProduct || categoryProduct.length === 0) {
+        return <div>Cargando...</div>;  // Muestra un mensaje mientras se cargan los productos
+      }
 
     return (
         <>
-          <Title title="Artículos de" subtitle="Todos los productos" />
+          <Title title={`Artículos de ${categoryProduct[0].category}`}  subtitle="Todos los productos" />
           <ProductGrid products={categoryProduct} />
         </>
     )
