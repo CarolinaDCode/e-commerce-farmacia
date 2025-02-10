@@ -26,6 +26,7 @@ export const ProductGridItem = ({product}: Props) => {
                 <span className="font-bold">Precio: ${product.price}</span>
                 <span>Precio de Oferta: ${product.offer_price}</span>
                 <span>codigo: {product.bar_code}</span>
+                <span>categoria: {product.category}</span>
             </div>
             <button>Agregar al Carrito</button>
         </div>
