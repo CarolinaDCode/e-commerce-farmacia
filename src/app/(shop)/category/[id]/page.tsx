@@ -56,10 +56,10 @@ export default function Page() {
           return false;
         });
         setCategoryProduct(filteredProducts);
-      }, [id, products]);  // Agrega `id` y `products` como dependencias para recalcular
+      }, [id, products]); 
     
       if (!categoryProduct || categoryProduct.length === 0) {
-        return <div>Cargando...</div>;  // Muestra un mensaje mientras se cargan los productos
+        return <div>Cargando...</div>;
       }
 
     return (
