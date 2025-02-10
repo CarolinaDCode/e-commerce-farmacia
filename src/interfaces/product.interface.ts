@@ -1,15 +1,16 @@
 export interface Product {
-    id: string;
-    name: string;
-    description: string;
-    image: string;
-    creationDate: Date;
-    price: number;
-    offer: number;
-    promoted: boolean; //promoted
-    featured: boolean; //feature_product
-    barCode: string;
-    presentation: string;
-    category: string;
-    state: boolean
+    createdAt: string,
+    name: string,
+    image: string,
+    price: number,
+    offer_price: number,
+    promoted: boolean,
+    featured_product: boolean,
+    bar_code: number,
+    presentation_type: string,
+    category: string,
+    description: string,
+    state: boolean,
+    id: string
 }
+

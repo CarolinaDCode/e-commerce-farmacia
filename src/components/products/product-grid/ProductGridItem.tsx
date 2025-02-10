@@ -16,6 +16,7 @@ export const ProductGridItem = ({product}: Props) => {
                 width={500}
                 height={500}
                 unoptimized
+                priority
             />
 
             <div className="p-4 flex flex-col">
@@ -24,6 +25,7 @@ export const ProductGridItem = ({product}: Props) => {
                 </Link>
                 <span className="font-bold">Precio: ${product.price}</span>
                 <span>Precio de Oferta: ${product.offer_price}</span>
+                <span>codigo: {product.bar_code}</span>
             </div>
             <button>Agregar al Carrito</button>
         </div>

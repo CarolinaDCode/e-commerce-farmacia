@@ -1,9 +1,16 @@
 import { IoSearchOutline } from 'react-icons/io5';
+// import useGlobalState from '@/components/hooks/useGlobalState';
+import useStore from '@/store/useStore';
+
+
 export const Search = () => {
-  
+
+    const setWords = useStore(state => state.setWords);
+
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>)=>{
       e.preventDefault();
-      console.log(e.currentTarget.search.value);
+      const wordsSearch = e.currentTarget.search.value;
+      setWords(wordsSearch);
     }
 
     return (
